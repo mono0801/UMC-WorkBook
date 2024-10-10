@@ -15,7 +15,6 @@ import umc.spring.domain.review.Review;
 @Table(name = "Alarm")
 public class Alarm extends BaseEntity {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
 
     @Id
@@ -23,12 +22,23 @@ public class Alarm extends BaseEntity {
     private Long alarmId;
 
     private User userId;
+
     private Review reviewId;
+
     // 리뷰 답변 작성자
     private User reviewReplyWriter;
+
     private Qna qnaId;
+
+    @Column(length = 20, nullable = false)
     private String title;
+
+    @Column(length = 80, nullable = false)
     private String alarmContent;
+
+    @Column(nullable = false)
     private DType dtype;
-    private boolean confirm;
+
+    @Builder.Default
+    private boolean confirm = false;
 }

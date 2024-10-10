@@ -21,6 +21,8 @@ public class RestaurantMission {
     private long restaurantMissionId;
 
     private Restaurant restaurantId;
+
     private Mission missionId;
+
     private Location locationId;
 }

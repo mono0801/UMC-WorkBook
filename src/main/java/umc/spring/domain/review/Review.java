@@ -14,7 +14,6 @@ import umc.spring.domain.restaurant.Restaurant;
 @Table(name = "Review")
 public class Review extends BaseEntity {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
@@ -23,7 +22,13 @@ public class Review extends BaseEntity {
     private long reviewId;
 
     private User userId;
+
     private Restaurant restaurantId;
-    private int rating;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private int rating = 0;
+
+    @Column(length = 80, nullable = false)
     private String reviewContent;
 }

@@ -13,7 +13,6 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Qna")
 public class Qna extends BaseEntity {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
@@ -22,5 +21,7 @@ public class Qna extends BaseEntity {
     private long qnaId;
 
     private User userId;
+
+    @Column(length = 80, nullable = false)
     private String qnaContent;
 }

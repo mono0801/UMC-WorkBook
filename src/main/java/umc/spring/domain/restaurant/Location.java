@@ -12,12 +12,12 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Location")
 public class Location {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long locationID;
 
+    @Column(length = 20, nullable = false)
     private String locationName;
 }

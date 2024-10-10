@@ -13,7 +13,6 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Restaurant")
 public class Restaurant extends BaseEntity {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
@@ -22,7 +21,12 @@ public class Restaurant extends BaseEntity {
     private long restaurantId;
 
     private Location locationId;
+
     private User userId;
+
+    @Column(length = 20, nullable = false)
     private String restaurantName;
+
+    @Column(length = 30, nullable = false)
     private String address;
 }

@@ -15,7 +15,6 @@ import java.time.LocalDate;
 @Table(name = "User")
 public class User extends BaseEntity {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
@@ -23,14 +22,35 @@ public class User extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    private boolean owner;
+    @Builder.Default
+    private boolean owner = false;
+
+    @Column(length = 10, nullable = false)
     private String userName;
-    private Gender gender;
+
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private Gender gender = Gender.NONE;
+
+    @Column(nullable = false)
     private LocalDate birth;
+
+    @Column(length = 20, nullable = false)
     private String address;
+
+    @Column(length = 20, nullable = false)
     private String email;
-    private String phone;
-    private int point;
-    private boolean status;
-    private LocalDate deleteDate;
+
+    @Column(length = 20)
+    @Builder.Default
+    private String phone = null;
+
+    @Builder.Default
+    private int point = 0;
+
+    @Builder.Default
+    private boolean status = false;
+
+    @Builder.Default
+    private LocalDate deleteDate = null;
 }

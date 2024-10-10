@@ -11,7 +11,6 @@ import lombok.*;
 @Table(name = "Mission")
 public class Mission {
 
-    // TODO : 컬럼 세부 설정하기
     // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
@@ -19,6 +18,10 @@ public class Mission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long missionId;
 
+    @Column(length = 50, nullable = false)
     private String missionContent;
-    private int point;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private int point = 0;
 }
