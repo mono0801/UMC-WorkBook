@@ -18,10 +18,7 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long menuID;
 
-    // TODO : 컬럼 생성하기
-    /*
-    menuName
-    menuPrice
-    menuDescript
-     */
+    private String menuName;
+    private int menuPrice;
+    private String menuDescript;
 }

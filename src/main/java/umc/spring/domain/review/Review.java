@@ -2,7 +2,9 @@ package umc.spring.domain.review;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.restaurant.Restaurant;
 
 @Entity
 @Getter
@@ -20,11 +22,8 @@ public class Review extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reviewId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    userId
-    restaurantId
-    rating
-    reviewContent
-     */
+    private User userId;
+    private Restaurant restaurantId;
+    private int rating;
+    private String reviewContent;
 }

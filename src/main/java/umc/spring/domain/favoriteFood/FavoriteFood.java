@@ -18,8 +18,5 @@ public class FavoriteFood {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long favoriteFoodID;
 
-    // TODO : 컬럼 생성하기
-    /*
-    foodCategory
-     */
+    private String foodCategory;
 }

@@ -3,6 +3,9 @@ package umc.spring.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.enums.Gender;
+
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -20,17 +23,14 @@ public class User extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    owner
-    userName
-    gender
-    birth
-    address
-    email
-    phone
-    point
-    status
-    deleteDate
-     */
+    private boolean owner;
+    private String userName;
+    private Gender gender;
+    private LocalDate birth;
+    private String address;
+    private String email;
+    private String phone;
+    private int point;
+    private boolean status;
+    private LocalDate deleteDate;
 }

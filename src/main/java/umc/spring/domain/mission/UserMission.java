@@ -27,7 +27,5 @@ public class UserMission {
     @Id
     private User user;
 
-    /*
-    complete
-     */
+    private boolean complete;
 }

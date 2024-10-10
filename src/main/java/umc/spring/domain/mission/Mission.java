@@ -19,9 +19,6 @@ public class Mission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long missionId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    missionContent
-    point
-     */
+    private String missionContent;
+    private int point;
 }

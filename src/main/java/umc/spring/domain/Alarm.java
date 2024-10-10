@@ -3,6 +3,9 @@ package umc.spring.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.enums.DType;
+import umc.spring.domain.qna.Qna;
+import umc.spring.domain.review.Review;
 
 @Entity
 @Getter
@@ -19,15 +22,13 @@ public class Alarm extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long alarmId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    userId
-    reviewId
-    reviewWriter
-    qnaId
-    title
-    alarmContent
-    dtype
-    confirm
-     */
+    private User userId;
+    private Review reviewId;
+    // 리뷰 답변 작성자
+    private User reviewReplyWriter;
+    private Qna qnaId;
+    private String title;
+    private String alarmContent;
+    private DType dtype;
+    private boolean confirm;
 }

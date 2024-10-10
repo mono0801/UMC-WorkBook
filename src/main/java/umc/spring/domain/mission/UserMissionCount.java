@@ -27,7 +27,5 @@ public class UserMissionCount {
     @Id
     private User user;
 
-    /*
-    missionCount
-     */
+    private int missionCount;
 }

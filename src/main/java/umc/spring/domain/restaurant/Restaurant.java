@@ -2,6 +2,7 @@ package umc.spring.domain.restaurant;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
 
 @Entity
@@ -20,11 +21,8 @@ public class Restaurant extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long restaurantId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    locationId
-    userId
-    restaurantName
-    address
-     */
+    private Location locationId;
+    private User userId;
+    private String restaurantName;
+    private String address;
 }

@@ -2,7 +2,9 @@ package umc.spring.domain.review;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.restaurant.Restaurant;
 
 @Entity
 @Getter
@@ -20,14 +22,11 @@ public class ReviewReply extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reviewReplyId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    reviewId
+    private Review reviewId;
     // 리뷰 작성자
-    userId
-    restaurantId
+    private User userId;
+    private Restaurant restaurantId;
     // 리뷰 답변 작성자
-    reviewWriter
-    reviewReplyContent
-     */
+    private User reviewWriter;
+    private String reviewReplyContent;
 }

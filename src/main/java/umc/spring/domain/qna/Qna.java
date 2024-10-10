@@ -2,6 +2,7 @@ package umc.spring.domain.qna;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
 
 @Entity
@@ -20,9 +21,6 @@ public class Qna extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long qnaId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    userId
-    qnaContent
-     */
+    private User userId;
+    private String qnaContent;
 }

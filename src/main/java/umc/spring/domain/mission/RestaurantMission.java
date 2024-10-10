@@ -2,6 +2,8 @@ package umc.spring.domain.mission;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.restaurant.Location;
+import umc.spring.domain.restaurant.Restaurant;
 
 @Entity
 @Getter
@@ -18,10 +20,7 @@ public class RestaurantMission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long restaurantMissionId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    restaurantId
-    missionId
-    locationId
-     */
+    private Restaurant restaurantId;
+    private Mission missionId;
+    private Location locationId;
 }

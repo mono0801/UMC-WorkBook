@@ -20,9 +20,6 @@ public class QnaReply extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long qnaReplyId;
 
-    // TODO : 컬럼 생성하기
-    /*
-    qnaId
-    QnaReplyContent
-     */
+    private Qna qnaId;
+    private String QnaReplyContent;
 }

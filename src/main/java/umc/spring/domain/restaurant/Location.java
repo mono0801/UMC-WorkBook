@@ -19,8 +19,5 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long locationID;
 
-    // TODO : 컬럼 생성하기
-    /*
-    locationName
-     */
+    private String locationName;
 }
