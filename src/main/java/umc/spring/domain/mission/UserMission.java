@@ -14,14 +14,15 @@ import umc.spring.domain.compositeKey.UserMissionId;
 @IdClass(UserMissionId.class)
 public class UserMission {
 
-    // TODO : 연관관계 설정하기 - 단방향
-
-    // TODO : 복합키 & 연관관계 설정
     @Id
-    private RestaurantMission restaurantMission;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_mission_id", nullable = false)
+    private RestaurantMission restaurantMissionId;
 
     @Id
-    private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User userId;
 
     @Column(nullable = false)
     @Builder.Default

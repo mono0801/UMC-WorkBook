@@ -11,11 +11,9 @@ import lombok.*;
 @Table(name = "FavoriteFood")
 public class FavoriteFood {
 
-    // TODO : 연관관계 설정하기 - 단방향
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long favoriteFoodID;
+    private Long favoriteFoodId;
 
     @Column(length = 20, nullable = false)
     private String foodCategory;

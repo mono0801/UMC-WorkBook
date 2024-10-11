@@ -1,14 +1,8 @@
 package umc.spring.domain.favoriteFood;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.User;
-import umc.spring.domain.compositeKey.RestaurantMenuId;
-import umc.spring.domain.restaurant.Menu;
-import umc.spring.domain.restaurant.Restaurant;
 
 @Entity
 @Getter
@@ -19,13 +13,13 @@ import umc.spring.domain.restaurant.Restaurant;
 @IdClass(UserFavoriteFood.class)
 public class UserFavoriteFood {
 
-    // TODO : 컬럼 세부 설정하기
-    // TODO : 연관관계 설정하기 - 단방향
-
-    // TODO : 복합키 & 연관관계 설정
     @Id
-    private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User userId;
 
     @Id
-    private FavoriteFood favoriteFood;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "favorite_food_id", nullable = false)
+    private FavoriteFood favoriteFoodId;
 }

@@ -12,17 +12,20 @@ import umc.spring.domain.restaurant.Restaurant;
 @AllArgsConstructor
 @Table(name = "RestaurantMission")
 public class RestaurantMission {
-
-    // TODO : 컬럼 세부 설정하기
-    // TODO : 연관관계 설정하기 - 단방향
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long restaurantMissionId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurantId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mission_id", nullable = false)
     private Mission missionId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", nullable = false)
     private Location locationId;
 }

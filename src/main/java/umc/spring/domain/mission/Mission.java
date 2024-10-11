@@ -11,7 +11,6 @@ import lombok.*;
 @Table(name = "Mission")
 public class Mission {
 
-    // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
     @Id

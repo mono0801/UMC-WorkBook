@@ -13,13 +13,14 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Qna")
 public class Qna extends BaseEntity {
 
-    // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long qnaId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User userId;
 
     @Column(length = 80, nullable = false)

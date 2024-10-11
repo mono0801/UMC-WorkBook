@@ -11,7 +11,7 @@ import lombok.*;
 @Table(name = "Menu")
 public class Menu {
 
-    // TODO : 연관관계 설정하기 - 단방향
+    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -13,14 +13,15 @@ import umc.spring.domain.compositeKey.RestaurantMenuId;
 @IdClass(RestaurantMenuId.class)
 public class RestaurantMenu {
 
-    // TODO : 컬럼 세부 설정하기
-    // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
-    // TODO : 복합키 & 연관관계 설정
     @Id
-    private Menu menu;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menu_id", nullable = false)
+    private Menu menuId;
 
     @Id
-    private Restaurant restaurant;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", nullable = false)
+    private Restaurant restaurantId;
 }

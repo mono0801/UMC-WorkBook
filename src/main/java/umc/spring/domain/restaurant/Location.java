@@ -2,7 +2,6 @@ package umc.spring.domain.restaurant;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.spring.domain.common.BaseEntity;
 
 @Entity
 @Getter
@@ -12,7 +11,7 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Location")
 public class Location {
 
-    // TODO : 연관관계 설정하기 - 단방향
+    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

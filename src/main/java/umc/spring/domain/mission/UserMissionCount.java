@@ -14,14 +14,15 @@ import umc.spring.domain.restaurant.Location;
 @IdClass(UserMissionCount.class)
 public class UserMissionCount {
 
-    // TODO : 연관관계 설정하기 - 단방향
-
-    // TODO : 복합키 & 연관관계 설정
     @Id
-    private Location location;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", nullable = false)
+    private Location locationId;
 
     @Id
-    private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User userId;
 
     @Column(nullable = false)
     @Builder.Default

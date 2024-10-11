@@ -13,15 +13,18 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "Restaurant")
 public class Restaurant extends BaseEntity {
 
-    // TODO : 연관관계 설정하기 - 단방향
     // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long restaurantId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", nullable = false)
     private Location locationId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User userId;
 
     @Column(length = 20, nullable = false)
