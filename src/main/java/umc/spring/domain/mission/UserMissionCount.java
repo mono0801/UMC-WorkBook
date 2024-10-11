@@ -10,7 +10,7 @@ import umc.spring.domain.restaurant.Location;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "UserFavoriteFood")
+@Table(name = "UserMissionCount")
 @IdClass(UserMissionCount.class)
 public class UserMissionCount {
 

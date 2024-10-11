@@ -10,7 +10,7 @@ import umc.spring.domain.compositeKey.UserMissionId;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "UserFavoriteFood")
+@Table(name = "UserMission")
 @IdClass(UserMissionId.class)
 public class UserMission {
 
