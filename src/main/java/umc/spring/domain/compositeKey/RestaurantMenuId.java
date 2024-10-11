@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @EqualsAndHashCode
 public class RestaurantMenuId implements Serializable {
-    private Long restaurant;
-    private Long menu;
+    private Long restaurantId;
+    private Long menuId;
 }

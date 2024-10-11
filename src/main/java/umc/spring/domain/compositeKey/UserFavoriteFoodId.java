@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @EqualsAndHashCode
 public class UserFavoriteFoodId implements Serializable {
-    private Long favoriteFood;
-    private Long user;
+    private Long favoriteFoodId;
+    private Long userId;
 }
