@@ -15,8 +15,6 @@ import umc.spring.domain.review.Review;
 @Table(name = "Alarm")
 public class Alarm extends BaseEntity {
 
-    // TODO : 연관관계 설정하기 - 양방향
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long alarmId;
@@ -32,7 +30,7 @@ public class Alarm extends BaseEntity {
 
     // 리뷰 답변 작성자
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "reply_writer")
     private User reviewReplyWriter;
 
     @ManyToOne(fetch = FetchType.LAZY)

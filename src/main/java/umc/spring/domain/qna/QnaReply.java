@@ -12,8 +12,6 @@ import umc.spring.domain.common.BaseEntity;
 @Table(name = "QnaReply")
 public class QnaReply extends BaseEntity {
 
-    // TODO : 연관관계 설정하기 - 양방향
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long qnaReplyId;

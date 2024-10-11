@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.mission.RestaurantMission;
+import umc.spring.domain.review.Review;
+import umc.spring.domain.review.ReviewReply;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -12,8 +17,6 @@ import umc.spring.domain.common.BaseEntity;
 @AllArgsConstructor
 @Table(name = "Restaurant")
 public class Restaurant extends BaseEntity {
-
-    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +35,16 @@ public class Restaurant extends BaseEntity {
 
     @Column(length = 30, nullable = false)
     private String address;
+
+    @OneToMany(mappedBy = "restaurantId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "restaurantId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ReviewReply> reviewReplies;
+
+    @OneToMany(mappedBy = "restaurantId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RestaurantMenu> restaurantMenus;
+
+    @OneToMany(mappedBy = "restaurantId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RestaurantMission> restaurantMissions;
 }

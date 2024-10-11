@@ -5,6 +5,8 @@ import lombok.*;
 import umc.spring.domain.restaurant.Location;
 import umc.spring.domain.restaurant.Restaurant;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -12,7 +14,7 @@ import umc.spring.domain.restaurant.Restaurant;
 @AllArgsConstructor
 @Table(name = "RestaurantMission")
 public class RestaurantMission {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long restaurantMissionId;
@@ -28,4 +30,7 @@ public class RestaurantMission {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id", nullable = false)
     private Location locationId;
+
+    @OneToMany(mappedBy = "restaurantMissionId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<UserMission> userMissions;
 }

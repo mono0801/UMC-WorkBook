@@ -3,6 +3,8 @@ package umc.spring.domain.mission;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -10,8 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @Table(name = "Mission")
 public class Mission {
-
-    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +23,7 @@ public class Mission {
     @Column(nullable = false)
     @Builder.Default
     private int point = 0;
+
+    @OneToMany(mappedBy = "missionId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RestaurantMission> restaurantMissions;
 }

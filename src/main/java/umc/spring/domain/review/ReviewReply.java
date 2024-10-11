@@ -14,8 +14,6 @@ import umc.spring.domain.restaurant.Restaurant;
 @Table(name = "ReviewReply")
 public class ReviewReply extends BaseEntity {
 
-    // TODO : 연관관계 설정하기 - 양방향
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long reviewReplyId;
@@ -35,8 +33,8 @@ public class ReviewReply extends BaseEntity {
 
     // 리뷰 답변 작성자
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User reviewWriter;
+    @JoinColumn(name = "reply_writer", nullable = false)
+    private User reviewReplyWriter;
 
     @Column(length = 80, nullable = false)
     private String reviewReplyContent;

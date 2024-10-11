@@ -2,9 +2,12 @@ package umc.spring.domain.review;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.Alarm;
 import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
 import umc.spring.domain.restaurant.Restaurant;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,8 +16,6 @@ import umc.spring.domain.restaurant.Restaurant;
 @AllArgsConstructor
 @Table(name = "Review")
 public class Review extends BaseEntity {
-
-    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +35,10 @@ public class Review extends BaseEntity {
 
     @Column(length = 80, nullable = false)
     private String reviewContent;
+
+    @OneToMany(mappedBy = "reviewId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ReviewReply> reviewReplies;
+
+    @OneToMany(mappedBy = "reviewId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Alarm> alarms;
 }

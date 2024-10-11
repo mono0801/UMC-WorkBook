@@ -2,8 +2,11 @@ package umc.spring.domain.qna;
 
 import jakarta.persistence.*;
 import lombok.*;
+import umc.spring.domain.Alarm;
 import umc.spring.domain.User;
 import umc.spring.domain.common.BaseEntity;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -12,8 +15,6 @@ import umc.spring.domain.common.BaseEntity;
 @AllArgsConstructor
 @Table(name = "Qna")
 public class Qna extends BaseEntity {
-
-    // TODO : 연관관계 설정하기 - 양방향
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +26,10 @@ public class Qna extends BaseEntity {
 
     @Column(length = 80, nullable = false)
     private String qnaContent;
+
+    @OneToMany(mappedBy = "qnaId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<QnaReply> qnaReplies;
+
+    @OneToMany(mappedBy = "qnaId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Alarm> alarms;
 }
